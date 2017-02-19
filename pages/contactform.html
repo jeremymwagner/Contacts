@@ -1,0 +1,28 @@
+<div layout='row' layout-align='center center' style='padding: 30px' >
+    <div layout='column' layout-align='center center' md-whiteframe='12' class='md-warn' md-color='deep-orange' style=' padding-right: 20px;padding-left: 20px'>
+
+        <h3 class='md-title'>Contact Information</h3>
+        <br>
+        <md-input-container>
+          <label>First Name</label>
+          <input ng-model="tempFirst" type="text">
+        </md-input-container>
+        <br>
+        <md-input-container>
+          <label>Last Name</label>
+          <textarea ng-model="tempLast"></textarea>
+        </md-input-container>
+        <br>
+        <md-input-container>
+          <label>Phone Number</label>
+          <textarea ng-model="tempPhone"></textarea>
+        </md-input-container>
+        <br>
+        <md-input-container>
+          <label>Email</label>
+          <textarea ng-model="tempEmail"></textarea>
+        </md-input-container>
+        <md-button class='md-raised md-warn' style='margin-bottom: 20px' ng-click="addNewContact('/home')"> Add Contact
+        </md-button>
+    </div>
+</div>
