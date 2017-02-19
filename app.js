@@ -20,14 +20,10 @@ var contactList =  [
                         }
                 ];
 var idcount = 3;
-var tempContact = {
-                        firstName: '',
-                        lastName: '',
-                        phoneNum: -1,
-                        email: '',
-                        id: -1
-                    }
 
+//
+// Routing for all of the pages. The view being injected to is the entire page
+//
 contactsApp.config(function($routeProvider){
     $routeProvider
     .when('/home', {
@@ -57,6 +53,9 @@ contactsApp.controller('mainController', function($scope,filterFilter,$mdDialog,
     $scope.tempEmail;
     $scope.selectedContacts = [];
 
+//
+//  Function to take the inputs of the contact form and add them to the array of contacts as an object
+//
     $scope.addNewContact = function(ev){
 
 
@@ -81,6 +80,10 @@ contactsApp.controller('mainController', function($scope,filterFilter,$mdDialog,
 
     };
 
+
+//
+// Function to push a contact that has been checked to the selected array for futher manipulation
+//
     $scope.toggle = function(item, list) {
         var idx = list.indexOf(item);
         if (idx > -1) {
@@ -94,6 +97,9 @@ contactsApp.controller('mainController', function($scope,filterFilter,$mdDialog,
     };
 
 
+//
+//  Test function to determine whether or not the contact is in the array of contacts
+//
       $scope.exists = function (item, list) {
         return list.indexOf(item) > -1;
       };
