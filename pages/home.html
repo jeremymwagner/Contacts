@@ -76,18 +76,18 @@
   <md-list-item class="md-2-line">
     <div class="md-list-item-text" layout="row" layout-align="start center" style='font-size: 20px; border-bottom: 2px solid black; padding-bottom: 15px'>
         <span flex='10'></span>
-      <span flex="20">First Name</span>
+      <span flex="20" ng-click="filterBy('firstName')">First Name</span>
 
-      <span flex="20">Last Name</span>
+      <span flex="20" ng-click="filterBy('lastName')">Last Name</span>
 
-      <span flex="20">Phone Number</span>
+      <span flex="20" ng-click="filterBy('phoneNum')">Phone Number</span>
 
-      <span flex="20">Email</span>
+      <span flex="20" ng-click="filterBy('email')">Email</span>
       <span flex="10"><md-button   class='md-raised' ng-click='removeContacts()'>Remove</md-button></span>
 
     </div>
   </md-list-item>
-  <md-list-item class="md-2-line" ng-repeat="contact in contactList | filter:searchField">
+  <md-list-item class="md-2-line" ng-repeat="contact in contactList | filter:searchField | orderBy:myFilterBy">
     <div class="md-list-item-text" layout="row" layout-align="start center" style='padding-top: 15px'>
          <span flex="10"></span>
       <span flex="20">{{contact.firstName}}</span>
@@ -100,4 +100,5 @@
       <span flex='10' layout='row' layout-align='center center'><md-checkbox aria-label='cbox' ng-checked='exists(contact, selectedContacts)' ng-click='toggle(contact, selectedContacts)'></md-checkbox</span>
     </div>
   </md-list-item>
+  <div ng-repeat='s in selectedContacts'>{{s.firstName}}</div>
 </md-list>
